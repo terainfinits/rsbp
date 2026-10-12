@@ -5,7 +5,6 @@ Kelas: Rekayasa Sistem Berbasis Pengetahuan (A)
 Link untuk query: https://query.wikidata.org/
 
 1. Deceased royal members
-This finds members of the British royal family who have a death date:
 ```
 SELECT ?person ?personLabel ?deathDate WHERE {
   ?person wdt:P463 wd:Q645968 ;   # member of British royal family
@@ -16,7 +15,6 @@ ORDER BY ?deathDate
 ```
 
 2. Prince George’s grandfather
-Prince George’s father is Prince William; William’s father is King Charles III.
 ```
 SELECT ?grandfather ?grandfatherLabel WHERE {
   wd:Q13590412 wdt:P22 ?father .        # George -> father
@@ -27,7 +25,6 @@ SELECT ?grandfather ?grandfatherLabel WHERE {
 ```
 
 3. Princess Beatrice’s uncle
-Beatrice’s father is Prince Andrew. Her uncle is her father’s male sibling—King Charles III.
 ```
 SELECT DISTINCT ?uncle ?uncleLabel WHERE {
   wd:Q165657 wdt:P22 ?father .              # Beatrice -> father
@@ -41,7 +38,6 @@ SELECT DISTINCT ?uncle ?uncleLabel WHERE {
 ```
 
 4. Kate Middleton’s in-laws
-This returns the parents and siblings of Kate’s spouse, Prince William:
 ```
 SELECT DISTINCT ?inLaw ?inLawLabel ?relationship WHERE {
   wd:Q10479 wdt:P26 ?husband .              # Kate -> spouse
