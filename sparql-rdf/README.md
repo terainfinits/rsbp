@@ -66,3 +66,15 @@ SELECT DISTINCT ?inLaw ?inLawLabel ?relationship WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 ```
+
+Lain-lain:
+Search Kate Middleton
+```
+SELECT DISTINCT ?person ?personLabel WHERE {
+  ?person rdfs:label|skos:altLabel "Kate Middleton"@en ;
+          wdt:P31 wd:Q5 ;                 # instance of: human
+          wdt:P463 wd:Q645968 .           # member of: British royal family
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+```
