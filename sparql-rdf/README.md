@@ -34,7 +34,7 @@ SELECT DISTINCT ?uncle ?uncleLabel WHERE {
   ?father wdt:P3373 ?uncle .                # father -> sibling
   ?uncle wdt:P21 wd:Q6581097 .              # sibling is male
 
-  FILTER(?uncle != ?father)
+  # FILTER(?uncle != ?father)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
