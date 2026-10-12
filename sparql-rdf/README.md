@@ -47,12 +47,12 @@ SELECT DISTINCT ?inLaw ?inLawLabel ?relationship WHERE {
   wd:Q10479 wdt:P26 ?husband .              # Kate -> spouse
 
   {
-    ?inLaw wdt:P22 ?husband .
+    ?husband wdt:P22 ?inLaw .
     BIND("Father-in-law" AS ?relationship)
   }
   UNION
   {
-    ?inLaw wdt:P25 ?husband .
+    ?husband wdt:P25 ?inLaw .
     BIND("Mother-in-law" AS ?relationship)
   }
   UNION
@@ -61,7 +61,7 @@ SELECT DISTINCT ?inLaw ?inLawLabel ?relationship WHERE {
     BIND("Sibling-in-law" AS ?relationship)
   }
 
-  FILTER(?inLaw != wd:Q10479)
+  # FILTER(?inLaw != wd:Q10479)
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
